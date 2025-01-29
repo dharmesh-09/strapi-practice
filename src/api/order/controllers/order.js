@@ -1,5 +1,6 @@
 // @ts-nocheck
 ("use strict");
+console.log('Stripe Secret Key:', process.env.STRIPE_KEY);
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 
@@ -8,7 +9,6 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     async create(ctx) {
         const { products } = ctx.request.body;
-console.log(products);
 
 try {
   const lineItems = await Promise.all(
