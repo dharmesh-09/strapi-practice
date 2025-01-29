@@ -1,7 +1,6 @@
 // @ts-nocheck
 ("use strict");
-console.log('Stripe Secret Key:', process.env.STRIPE_KEY);
-const stripe = require("stripe")(process.env.STRIPE_KEY);
+const stripe = require("stripe")("sk_test_51Qm7rl2Y1Xr2k5SgdIVBh6LUQPgK0VQq9E0Af6QGZOR1m4IJqMGp23xP8voK1V7Fis7TvsQ3Yt4VMsUSazTGOwjT00XKX6XLDR");
 
 
 const { createCoreController } = require("@strapi/strapi").factories;
