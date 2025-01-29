@@ -1,17 +1,17 @@
 const path = require('path');
 
 module.exports = ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'mysql');  // Set default to 'mysql'
+  const client = env('DATABASE_CLIENT', 'mysql'); // Use 'mysql' client since you're connecting to MySQL
 
   const connections = {
     mysql: {
       connection: {
-        host: env('DATABASE_HOST', 'mysql.railway.app'),  // Update with your Railway MySQL host
-        port: env.int('DATABASE_PORT', 3306),  // Default MySQL port
-        database: env('DATABASE_NAME', 'railway'),  // Use your actual database name
-        user: env('DATABASE_USERNAME', 'root'),  // Default MySQL username
-        password: env('DATABASE_PASSWORD', 'GWPMIOsyrUiVkeIpdhMkKXbXxdpkzSpN'),  // Your password from Railway environment
-        ssl: env.bool('DATABASE_SSL', false),  // Set SSL to false unless needed
+        host: env('DATABASE_HOST', 'autorack.proxy.rlwy.net'), // Use the provided host
+        port: env.int('DATABASE_PORT', 12106), // Use the port 12106 from your connection command
+        database: env('DATABASE_NAME', 'railway'), // Database name is 'railway' according to your connection
+        user: env('DATABASE_USERNAME', 'root'), // User is 'root'
+        password: env('DATABASE_PASSWORD', 'GWPMIOsyrUiVkeIpdhMkKXbXxdpkzSpN'), // Password as per your environment variable
+        ssl: env.bool('DATABASE_SSL', false), // You can set true if SSL is required for your connection
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
